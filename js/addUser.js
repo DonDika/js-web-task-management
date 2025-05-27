@@ -3,9 +3,8 @@
 
 document.addEventListener('DOMContentLoaded', ()=>{
 
-    // targeting ke id yg ada di html
-    const userForm = document.getElementById('userForm');
-    const userManager = new User(); //instance dari Model User
+    const userForm = document.getElementById('userForm');  // targeting ke id yg ada di html
+    const userManager = new User();  //instance dari Model User
 
     // memberikan sebuah event ketika di-submit
     userForm.addEventListener('submit', (event)=> {
@@ -19,8 +18,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
         // lempar data ke Model
         userManager.saveUser(userData);
-
-        console.log('berhasil ter-submit');
+        
     })
 
 });
