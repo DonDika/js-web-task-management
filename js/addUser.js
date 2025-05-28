@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     // memberikan sebuah event ketika di-submit
     userForm.addEventListener('submit', (event)=> {
-        
         event.preventDefault();
 
         // mengambil value menggunakan id
@@ -17,8 +16,13 @@ document.addEventListener('DOMContentLoaded', ()=>{
         }
 
         // lempar data ke Model
-        userManager.saveUser(userData);
-        
+        const result = userManager.saveUser(userData);
+        if (result.success) {
+            return window.location = '../signin.html';
+        } else {
+            console.log('proses simpan data gagal');
+        }
+
     })
 
 });
