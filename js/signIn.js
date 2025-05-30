@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (result.success) {
             alert('success loggedin');
+            localStorage.setItem('usernameLoggedIn', usernameByInput );
+            return window.location.href = '../tasks.html';
         } else {
             alert(result.message)
         }

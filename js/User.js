@@ -36,7 +36,7 @@ class User {
         } else {
             return {
                 success: false,
-                message: 'Data tidak ditemukan'
+                message: 'Username tidak ditemukan'
             }
         }
     }
