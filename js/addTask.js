@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded',()=> {
 
         if (result.success) {
             alert('berhasil menyimpan data');
+            return window.location.href = '../tasks.html';
         } else {
             alert('gagal menyimpan data')
         }
