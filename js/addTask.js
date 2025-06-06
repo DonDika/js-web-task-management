@@ -10,7 +10,8 @@ document.addEventListener('DOMContentLoaded',()=> {
 
         const taskData = {
             taskName: document.getElementById('taskName').value,
-            taskPriority: document.getElementById('taskPriority').value
+            taskPriority: document.getElementById('taskPriority').value,
+            createdAt: '2025-06-05'
         };
 
         const result = taskManager.saveTask(taskData)

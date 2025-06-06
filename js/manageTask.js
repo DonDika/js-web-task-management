@@ -1,5 +1,4 @@
 
-
 document.addEventListener('DOMContentLoaded', () => {
 
     const myTask = new Task();
@@ -29,8 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <img src="img/icons/ghost.svg" alt="icon">
                             </div>
                             <div class="flex flex-col">
-                                <p class="font-bold text-lg leading-[27px]">Install Figma on Windows Server</p>
-                                <p class="text-sm leading-[21px] text-taskia-grey">Created at 22 Agustus 2024</p>
+                                <p class="font-bold text-lg leading-[27px]">${task.taskName}</p>
+                                <p class="text-sm leading-[21px] text-taskia-grey">Created at ${task.createdAt }</p>
                             </div>
                         </div>
 
@@ -39,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <div class="flex shrink-0 w-5 h-5">
                                     <img src="img/icons/layer.svg" alt="icon">
                                 </div>
-                                <p>High</p>
+                                <p>${task.taskPriority}</p>
                             </div>
                             <div class="flex gap-1 items-center">
                                 <div class="flex shrink-0 w-5 h-5">
@@ -69,13 +68,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 taskWrapper.appendChild(itemTask);
 
-
                 
             });
-
-
-            
-
 
         }
     }
