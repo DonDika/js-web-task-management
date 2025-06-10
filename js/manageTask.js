@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const taskWrapper = document.getElementById('taskWrapper');
     const taskWrapperEmpty = document.getElementById('taskWrapperEmpty');
 
+    
     function displayAllTask() {
         if (existingTask.length === 0) {
             taskWrapper.className = 'hidden';
@@ -15,7 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
             taskWrapperEmpty.className = 'hidden';
             //console.log('terdapat beberapa task')
 
+
             existingTask.forEach(task => {
+                const userFriendlyDate = formatDate(task.createdAt);
 
                 const itemTask = document.createElement('div');
                 itemTask.className = 'flex justify-between bg-white p-5 w-full rounded-3xl';
@@ -28,8 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <img src="img/icons/ghost.svg" alt="icon">
                             </div>
                             <div class="flex flex-col">
-                                <p class="font-bold text-lg leading-[27px]">${task.taskName}</p>
-                                <p class="text-sm leading-[21px] text-taskia-grey">Created at ${task.createdAt }</p>
+                                <p class="font-bold text-lg leading-[27px]">${capitalizeFirstChar(task.taskName)}</p>
+                                <p class="text-sm leading-[21px] text-taskia-grey">Created at ${userFriendlyDate}</p>
                             </div>
                         </div>
 
@@ -89,6 +92,23 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
         }
+    }
+
+    function capitalizeFirstChar(str) {
+        if (!str) return str;
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
+    function formatDate(userFriendlyDate){
+        const date = new Date(userFriendlyDate);
+
+        const options = {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+        };
+
+        return date.toLocaleDateString('en-GB', options);
     }
 
     displayAllTask();
